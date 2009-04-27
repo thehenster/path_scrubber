@@ -53,7 +53,8 @@ describe "PathScrubber Custom" do
   end
   
   {
-    "henry" => "HENRY"
+    "henry" => "HENRY",
+    ["henry", "sarah"] => ["HENRY", "SARAH"]
   }.each do |k,v|
     it "#{k} should scrub to #{v}" do
       k.scrub_as_custom.should == v
