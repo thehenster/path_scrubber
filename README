@@ -4,12 +4,16 @@ PathScrubber is a simple rails plugin (that can be used independently of rails) 
 
 Dynamic methods are added to Ruby's native classes so your styles are always available when needed.
 
-h2. Example
+h2. Examples
+
+h3. Using the preloaded :url style.
 
 > PathScrubber::Scrubber.set_scrubber_style :url
 => true
 > "Sam & John's predicatable post title!".scrub_as_url
 => "sam-and-johns-predicatable-post-title"
+
+h3. Defining your own style and using it from an Array.
 
 > PathScrubber::Scrubber.set_scrubber_style :scream, :upcase => true, :characters => {"." => "!"}
 => true
