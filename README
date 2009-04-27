@@ -1,0 +1,17 @@
+h1. PathScrubber
+
+PathScrubber is a simple rails plugin (that can be used independently of rails) to clean up strings according to a customizable style. Its most obvious application is cleaning up paths to be SEO/URL friendly.
+
+Dynamic methods are added to Ruby's native classes so your styles are always available when needed.
+
+h2. Example
+
+> PathScrubber::Scrubber.set_scrubber_style :url
+=> true
+> "Sam & John's predicatable post title!".scrub_as_url
+=> "sam-and-johns-predicatable-post-title"
+
+> PathScrubber::Scrubber.set_scrubber_style :scream, :upcase => true, :characters => {"." => "!"}
+=> true
+> ["Please move.", "To be continued..."].scrub_as_scream
+=> ["PLEASE MOVE!", "TO BE CONTINUED!!!"]
